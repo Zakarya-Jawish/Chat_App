@@ -1,9 +1,15 @@
 import 'package:chat_app/views/login_veiw.dart';
 import 'package:chat_app/views/register_veiw.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const TalkToMe());
 }
 
