@@ -47,12 +47,18 @@ class LoginVeiw extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const CustomTextField(
+              CustomTextField(
                 hintText: 'Email',
+                onChanged: (data) {
+                  var email = data;
+                },
               ),
               const SizedBox(height: 10),
-              const CustomTextField(
+              CustomTextField(
                 hintText: 'Password',
+                onChanged: (pass) {
+                  var password = pass;
+                },
               ),
               const SizedBox(height: 20),
               CustomButton(function: () {}, text: 'Login'),

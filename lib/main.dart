@@ -22,7 +22,7 @@ class TalkToMe extends StatelessWidget {
     return MaterialApp(
       routes: {
         LoginVeiw.id: (context) => const LoginVeiw(),
-        RegisterVeiw.id: (context) => const RegisterVeiw(),
+        RegisterVeiw.id: (context) => RegisterVeiw(),
       },
       debugShowCheckedModeBanner: false,
       initialRoute: LoginVeiw.id,
