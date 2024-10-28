@@ -72,10 +72,6 @@ class RegisterVeiw extends StatelessWidget {
                 const CustomTextField(
                   hintText: 'Password',
                 ),
-                const SizedBox(height: 10),
-                const CustomTextField(
-                  hintText: 'Phone',
-                ),
                 const SizedBox(height: 20),
                 CustomButton(function: () {}, text: 'Register'),
               ],
