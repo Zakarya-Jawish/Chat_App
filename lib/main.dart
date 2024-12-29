@@ -1,3 +1,4 @@
+import 'package:chat_app/views/chat_view.dart';
 import 'package:chat_app/views/login_veiw.dart';
 import 'package:chat_app/views/register_veiw.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,10 +23,12 @@ class TalkToMe extends StatelessWidget {
     return MaterialApp(
       routes: {
         LoginVeiw.id: (context) => const LoginVeiw(),
-        RegisterVeiw.id: (context) => RegisterVeiw(),
+        RegisterVeiw.id: (context) => const RegisterVeiw(),
+        ChatView.id: (context) => ChatView(),
       },
       debugShowCheckedModeBanner: false,
       initialRoute: LoginVeiw.id,
+      // home: ChatView(),
     );
   }
 }

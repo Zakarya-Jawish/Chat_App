@@ -1,23 +1,48 @@
+import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, this.hintText, this.onChanged});
-  final String? hintText;
-  final Function(String)? onChanged;
+  const CustomTextField(
+      {super.key, required this.onSubmitted, this.controller});
+  final void Function(String?) onSubmitted;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      onChanged: onChanged,
-      style: const TextStyle(color: Colors.white),
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
-        enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: Colors.white)),
-        focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-            borderSide: BorderSide(color: Colors.white)),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: controller,
+              onSubmitted: onSubmitted,
+              decoration: InputDecoration(
+                hintText: 'Type your message here...',
+                suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.send,
+                      color: kPrimaryColor,
+                    )),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                ),
+                // enabledBorder: const OutlineInputBorder(
+                //   borderRadius: BorderRadius.all(
+                //     Radius.circular(20),
+                //   ),
+                // ),
+                // focusedBorder: const OutlineInputBorder(
+                //   borderRadius: BorderRadius.all(
+                //     Radius.circular(20),
+                //   ),
+                // ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
